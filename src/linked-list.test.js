@@ -66,3 +66,16 @@ test('last value of list', () => {
 	const last = list.tail();
 	expect(last.value).toBe('fish');
 });
+
+test('return value at index', () => {
+	const list = linkedList();
+	list.append('horse');
+	list.append('fish');
+	list.prepend('cat');
+	expect(list.at(2).value).toBe('fish');
+});
+
+test('return value at index out of list size', () => {
+	const list = linkedList();
+	expect(list.at(5)).toBe(undefined);
+});

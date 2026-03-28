@@ -50,5 +50,15 @@ export const linkedList = () => {
 		return last;
 	};
 
-	return { append, getHead, prepend, size, tail };
+	const at = (index) => {
+		let tmp = listHead;
+
+		for (let i = 0; i < index; i++) {
+			if (tmp === null) return undefined;
+			tmp = tmp.nextNode;
+		}
+		return tmp || undefined;
+	};
+
+	return { append, getHead, prepend, size, tail, at };
 };
