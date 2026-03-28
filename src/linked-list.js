@@ -18,7 +18,12 @@ export const linkedList = () => {
 		tmp.nextNode = newNode;
 	};
 
-	const getHead = () => listHead;
+	const getHead = () => {
+		if (listHead === null) {
+			return undefined;
+		}
+		return listHead;
+	};
 
 	const prepend = (value) => {
 		listHead = node(value, listHead);
