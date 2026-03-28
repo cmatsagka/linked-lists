@@ -1,0 +1,27 @@
+{
+	"name": "linked-lists",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cmatsagka/linked-lists.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "module",
+	"bugs": {
+		"url": "https://github.com/cmatsagka/linked-lists/issues"
+	},
+	"homepage": "https://github.com/cmatsagka/linked-lists#readme",
+	"devDependencies": {
+		"@babel/core": "^7.29.0",
+		"@babel/preset-env": "^7.29.2",
+		"babel-jest": "^30.3.0",
+		"jest": "^30.3.0"
+	}
+}
