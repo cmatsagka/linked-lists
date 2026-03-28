@@ -82,3 +82,26 @@ test('return undefined for out of bounds index', () => {
 	list.append('fish');
 	expect(list.at(5)).toBe(undefined);
 });
+
+test('pop head node from empty list and return undefined', () => {
+	const list = linkedList();
+	expect(list.pop()).toBe(undefined);
+});
+
+test('pop head node and return value', () => {
+	const list = linkedList();
+	list.append('horse');
+	list.append('fish');
+	list.prepend('cat');
+	expect(list.pop().value).toBe('cat');
+});
+
+test('pop head node and return value', () => {
+	const list = linkedList();
+	list.append('horse');
+	list.append('fish');
+	list.prepend('cat');
+	list.prepend('dog');
+
+	expect(list.pop().value).toBe('dog');
+});

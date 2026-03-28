@@ -60,5 +60,12 @@ export const linkedList = () => {
 		return tmp || undefined;
 	};
 
-	return { append, getHead, prepend, size, tail, at };
+	const pop = () => {
+		if (listHead === null) return undefined;
+		let tmp = listHead;
+		listHead = tmp.nextNode;
+		return tmp;
+	};
+
+	return { append, getHead, prepend, size, tail, at, pop };
 };
