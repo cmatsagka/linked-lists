@@ -67,15 +67,18 @@ test('last value of list', () => {
 	expect(last.value).toBe('fish');
 });
 
-test('return value at index', () => {
+test('return node value at index', () => {
 	const list = linkedList();
 	list.append('horse');
 	list.append('fish');
 	list.prepend('cat');
+	expect(list.at(0).value).toBe('cat');
+	expect(list.at(1).value).toBe('horse');
 	expect(list.at(2).value).toBe('fish');
 });
 
-test('return value at index out of list size', () => {
+test('return undefined for out of bounds index', () => {
 	const list = linkedList();
+	list.append('fish');
 	expect(list.at(5)).toBe(undefined);
 });
