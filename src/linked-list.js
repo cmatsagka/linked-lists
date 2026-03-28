@@ -99,14 +99,10 @@ export const linkedList = () => {
 		if (listHead === null) return '';
 
 		while (tmp !== null) {
-			if (tmp.nextNode === null) {
-				listString += `('${tmp.value}')`;
-			} else {
-				listString += `('${tmp.value}') -> `;
-			}
+			listString += `(${tmp.value}) -> `;
 			tmp = tmp.nextNode;
 		}
-		return listString;
+		return (listString += null);
 	};
 
 	return {

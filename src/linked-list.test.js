@@ -140,7 +140,7 @@ test('represent node list as string', () => {
 	list.prepend('dog');
 
 	expect(list.toString()).toEqual(
-		`('dog') -> ('cat') -> ('horse') -> ('fish')`
+		`(dog) -> (cat) -> (horse) -> (fish) -> null`
 	);
 });
 
