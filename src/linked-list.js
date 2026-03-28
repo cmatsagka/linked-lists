@@ -24,5 +24,15 @@ export const linkedList = () => {
 		listHead = node(value, listHead);
 	};
 
-	return { append, getHead, prepend };
+	const size = () => {
+		let count = 0;
+		let tmp = listHead;
+		while (tmp !== null) {
+			count++;
+			tmp = tmp.nextNode;
+		}
+		return count;
+	};
+
+	return { append, getHead, prepend, size };
 };
