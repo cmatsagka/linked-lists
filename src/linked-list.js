@@ -20,5 +20,9 @@ export const linkedList = () => {
 
 	const getHead = () => listHead;
 
-	return { append, getHead };
+	const prepend = (value) => {
+		listHead = node(value, listHead);
+	};
+
+	return { append, getHead, prepend };
 };
