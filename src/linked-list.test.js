@@ -131,3 +131,21 @@ test('return the index of the node that contains value', () => {
 	expect(list.findIndex('dog')).toBe(0);
 	expect(list.findIndex('mouse')).toBe(-1);
 });
+
+test('represent node list as string', () => {
+	const list = linkedList();
+	list.append('horse');
+	list.append('fish');
+	list.prepend('cat');
+	list.prepend('dog');
+
+	expect(list.toString()).toEqual(
+		`('dog') -> ('cat') -> ('horse') -> ('fish')`
+	);
+});
+
+test('represent empty node list as empty sting', () => {
+	const list = linkedList();
+
+	expect(list.toString()).toBe('');
+});

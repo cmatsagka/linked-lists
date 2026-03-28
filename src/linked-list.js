@@ -93,6 +93,22 @@ export const linkedList = () => {
 		return -1;
 	};
 
+	const toString = () => {
+		let tmp = listHead;
+		let listString = '';
+		if (listHead === null) return '';
+
+		while (tmp !== null) {
+			if (tmp.nextNode === null) {
+				listString += `('${tmp.value}')`;
+			} else {
+				listString += `('${tmp.value}') -> `;
+			}
+			tmp = tmp.nextNode;
+		}
+		return listString;
+	};
+
 	return {
 		append,
 		getHead,
@@ -103,5 +119,6 @@ export const linkedList = () => {
 		pop,
 		contains,
 		findIndex,
+		toString,
 	};
 };
