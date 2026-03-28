@@ -51,3 +51,18 @@ test('get head value of list', () => {
 	const head = list.getHead();
 	expect(head.value).toBe('cat');
 });
+
+test('last value of an empty list is undefined', () => {
+	const list = linkedList();
+	expect(list.tail()).toBe(undefined);
+});
+
+test('last value of list', () => {
+	const list = linkedList();
+	list.append('horse');
+	list.append('fish');
+	list.prepend('cat');
+
+	const last = list.tail();
+	expect(last.value).toBe('fish');
+});

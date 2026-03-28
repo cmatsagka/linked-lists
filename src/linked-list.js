@@ -39,5 +39,16 @@ export const linkedList = () => {
 		return count;
 	};
 
-	return { append, getHead, prepend, size };
+	const tail = () => {
+		let tmp = listHead;
+		let last = undefined;
+
+		while (tmp !== null) {
+			last = tmp;
+			tmp = tmp.nextNode;
+		}
+		return last;
+	};
+
+	return { append, getHead, prepend, size, tail };
 };
