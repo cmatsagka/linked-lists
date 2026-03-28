@@ -79,5 +79,29 @@ export const linkedList = () => {
 		return false;
 	};
 
-	return { append, getHead, prepend, size, tail, at, pop, contains };
+	const findIndex = (value) => {
+		let tmp = listHead;
+		let count = 0;
+
+		while (tmp !== null) {
+			if (tmp.value === value) {
+				return count;
+			}
+			tmp = tmp.nextNode;
+			count++;
+		}
+		return -1;
+	};
+
+	return {
+		append,
+		getHead,
+		prepend,
+		size,
+		tail,
+		at,
+		pop,
+		contains,
+		findIndex,
+	};
 };

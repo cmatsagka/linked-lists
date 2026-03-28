@@ -118,3 +118,16 @@ test('return true or false if list contains value', () => {
 	expect(list.contains('mouse')).toEqual(false);
 	console.log(list.contains('mouse'));
 });
+
+test('return the index of the node that contains value', () => {
+	const list = linkedList();
+	list.append('horse');
+	list.append('fish');
+	list.prepend('cat');
+	list.prepend('dog');
+
+	expect(list.findIndex('cat')).toBe(1);
+	expect(list.findIndex('fish')).toBe(3);
+	expect(list.findIndex('dog')).toBe(0);
+	expect(list.findIndex('mouse')).toBe(-1);
+});
