@@ -105,3 +105,16 @@ test('pop head node and return value', () => {
 
 	expect(list.pop().value).toBe('dog');
 });
+
+test('return true or false if list contains value', () => {
+	const list = linkedList();
+	list.append('horse');
+	list.append('fish');
+	list.prepend('cat');
+	list.prepend('dog');
+
+	expect(list.contains('dog')).toEqual(true);
+	console.log(list.contains('dog'));
+	expect(list.contains('mouse')).toEqual(false);
+	console.log(list.contains('mouse'));
+});
