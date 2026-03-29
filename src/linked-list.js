@@ -102,7 +102,33 @@ export const linkedList = () => {
 			listString += `(${tmp.value}) -> `;
 			tmp = tmp.nextNode;
 		}
-		return (listString += null);
+		return listString + 'null';
+	};
+
+	const insertAt = (index, ...values) => {
+		if (index < 0) throw new RangeError('Index cannot be negative');
+		if (values.length === 0) return;
+
+		let firstNewNode = node(values[0]);
+		let currentNewNode = firstNewNode;
+
+		for (let i = 1; i < values.length; i++) {
+			currentNewNode.nextNode = node(values[i]);
+			currentNewNode = currentNewNode.nextNode;
+		}
+
+		if (index === 0) {
+			currentNewNode.newNode = listHead;
+			listHead = firstNewNode;
+			return;
+		}
+
+		let previous = at(index - 1);
+
+		if (!previous) throw new RangeError('Index out of bounds');
+
+		currentNewNode.nextNode = previous.nextNode;
+		previous.nextNode = firstNewNode;
 	};
 
 	return {
@@ -116,5 +142,6 @@ export const linkedList = () => {
 		contains,
 		findIndex,
 		toString,
+		insertAt,
 	};
 };

@@ -149,3 +149,20 @@ test('represent empty node list as empty sting', () => {
 
 	expect(list.toString()).toBe('');
 });
+
+test('insertAt: inserts multiple values at a specific index', () => {
+	const list = linkedList();
+	list.append('A');
+	list.append('D');
+
+	list.insertAt(1, 'B', 'C');
+
+	expect(list.toString()).toBe('(A) -> (B) -> (C) -> (D) -> null');
+});
+
+test('insertAt: throws RangeError if index is out of bounds', () => {
+	const list = linkedList();
+	list.append('A');
+
+	expect(() => list.insertAt(5, 'Z')).toThrow(RangeError);
+});
