@@ -166,3 +166,22 @@ test('insertAt: throws RangeError if index is out of bounds', () => {
 
 	expect(() => list.insertAt(5, 'Z')).toThrow(RangeError);
 });
+
+test('remove node at a specific index', () => {
+	const list = linkedList();
+	list.append('A');
+	list.append('B');
+	list.append('C');
+	list.append('D');
+
+	list.removeAt(1);
+
+	expect(list.toString()).toBe('(A) -> (C) -> (D) -> null');
+});
+
+test('remove node out of bounds throws RangeError', () => {
+	const list = linkedList();
+	list.append('A');
+
+	expect(() => list.removeAt(5)).toThrow(RangeError);
+});

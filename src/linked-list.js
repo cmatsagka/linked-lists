@@ -131,6 +131,20 @@ export const linkedList = () => {
 		previous.nextNode = firstNewNode;
 	};
 
+	const removeAt = (index) => {
+		if (index < 0 || index >= size()) {
+			throw new RangeError('Index out of bounds');
+		}
+
+		if (index === 0) {
+			listHead = listHead.nextNode;
+			return;
+		}
+
+		previous = at(index - 1);
+		previous.nextNode = previous.nextNode.nextNode;
+	};
+
 	return {
 		append,
 		getHead,
@@ -143,5 +157,6 @@ export const linkedList = () => {
 		findIndex,
 		toString,
 		insertAt,
+		removeAt,
 	};
 };
