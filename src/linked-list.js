@@ -118,7 +118,7 @@ export const linkedList = () => {
 		}
 
 		if (index === 0) {
-			currentNewNode.newNode = listHead;
+			currentNewNode.nextNode = listHead;
 			listHead = firstNewNode;
 			return;
 		}
@@ -141,7 +141,7 @@ export const linkedList = () => {
 			return;
 		}
 
-		previous = at(index - 1);
+		const previous = at(index - 1);
 		previous.nextNode = previous.nextNode.nextNode;
 	};
 
